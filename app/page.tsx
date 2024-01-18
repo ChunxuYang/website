@@ -1,113 +1,113 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Link from "next/link";
+
+import AvatarImage from "@/assets/avatar.png";
+import { buttonVariants } from "@/components/ui/button";
+import { PUBLIC_GITHUB, PUBLIC_LINKEDIN, PUBLIC_TWITTER } from "@/configs/info";
+import {
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  TwitterLogoIcon,
+} from "@radix-ui/react-icons";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <section className="py-12">
+      <div className="container sm:max-w-xl mx-auto my-auto space-y-4">
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+          <Image
+            src={AvatarImage}
+            alt="Avatar"
+            width={150}
+            height={150}
+            className="rounded-full p-4"
+          />
+          <div className="space-y-2">
+            <h1 className="text-3xl font-semibold">
+              Chunxu &apos;Henry&apos; Yang
+            </h1>
+
+            <div>
+              <Link href="mailto:chunxuyang@g.ucla.edu" className="inline-link">
+                chunxuyang [at] ucla [dot] edu
+              </Link>
+            </div>
+
+            <div className="flex gap-4 ml-auto">
+              <Link
+                href={PUBLIC_GITHUB}
+                className={buttonVariants({
+                  variant: "link",
+                  size: "link",
+                })}
+              >
+                <GitHubLogoIcon className="mr-1" />
+                Github
+              </Link>
+              │
+              <Link
+                href={PUBLIC_LINKEDIN}
+                className={buttonVariants({
+                  variant: "link",
+                  size: "link",
+                })}
+              >
+                <LinkedInLogoIcon className="mr-1" />
+                LinkedIn
+              </Link>
+              │
+              <Link
+                href={PUBLIC_TWITTER}
+                className={buttonVariants({
+                  variant: "link",
+                  size: "link",
+                })}
+              >
+                <TwitterLogoIcon className="mr-1" />
+                Twitter
+              </Link>
+            </div>
+          </div>
         </div>
+
+        <p>
+          My name is Chunxu &apos;Henry&apos; Yang, I&apos;m currently a M.S.
+          student at{" "}
+          <Link href="https://www.ee.ucla.edu/" className="inline-link">
+            UCLA Samueli School of Engineering
+          </Link>
+          , majoring in Electrical and Computer Engineering. I&apos;m also a
+          graduate student researcher at{" "}
+          <Link href="https://hci.ucla.edu/" className="inline-link">
+            UCLA HCI Research
+          </Link>{" "}
+          advised by Prof.{" "}
+          <Link href="https://hci.prof" className="inline-link">
+            Xiang &apos;Anthony&apos; Chen
+          </Link>
+          . My research is focused on human-AI collaboration technologies within
+          areas of pathology, AI-aided creativity, and natural language
+          processing.
+        </p>
+        <p>
+          Before my M.S. study, I obtained a BSc. in{" "}
+          <Link
+            href="https://cs.pku.edu.cn/English/Home.htm"
+            className="inline-link"
+          >
+            Computer Science and Technology
+          </Link>{" "}
+          and a B.A. in{" "}
+          <Link href="https://chinese.pku.edu.cn/" className="inline-link">
+            Chinese Language and Literature
+          </Link>{" "}
+          from{" "}
+          <Link href="https://english.pku.edu.cn" className="inline-link">
+            Peking University
+          </Link>
+          .
+        </p>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </section>
+  );
 }
