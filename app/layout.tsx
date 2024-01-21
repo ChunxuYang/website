@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 
 import Header from "@/components/header";
 import ThemeProvider from "@/providers/theme-provider";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <main>{children}</main>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
