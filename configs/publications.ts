@@ -13,6 +13,20 @@ type Publication = {
 export const PUBLICATIONS: Publication[] = [
   {
     title:
+      "A Human-AI Collaborative System to Support Mitosis Assessment in Pathology.",
+    authors: [
+      "Chunxu Yang",
+      // Mohammad Haeri, Shino Magaki, Neda Zarrin-Khameh, Hongyan Gu, Xiang 'Anthony' Chen.
+      "Mohammad Haeri",
+      "Shino Magaki",
+      "Neda Zarrin-Khameh",
+      "Hongyan Gu",
+      "Xiang 'Anthony' Chen",
+    ],
+    conference: "IUI 2024 (Just accepted)",
+  },
+  {
+    title:
       "Enhancing Mitosis Quantification and Detection in in Meningiomas with Computational Digital Pathology",
     // Hongyan Gu, Chunxu Yang, Issa Al-kharouf, Shino Magaki, Nelli Lakis, Christopher Kazu Williams, Sallam Mohammad Alrosan, Ellie Kate Onstott, Wenzhong Yan1, Negar Khanlou, Inma Cobos, Xinhai Robert Zhang, Neda Zarrin-Khameh, Harry V. Vinters, Xiang ‘Anthony’ Chen, Mohammad Haeri.
     authors: [

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 
 import Header from "@/components/header";
+import { cn } from "@/lib/utils";
 import ThemeProvider from "@/providers/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -21,8 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head></head>
-      <body className={inter.className}>
+      <body
+        className={cn(
+          inter.className,
+          "min-w-[100svw] min-h-[100svh] relative"
+        )}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <main>{children}</main>

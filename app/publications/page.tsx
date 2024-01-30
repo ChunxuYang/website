@@ -12,14 +12,24 @@ import {
 
 export default function PublicationsPage() {
   return (
-    <section className="py-12">
+    <section className="sm:py-12">
       <div className="container mx-auto">
         <h2 className="text-3xl font-semibold mb-12">Selected Publications</h2>
         <ul className="flex flex-col gap-4">
           {PUBLICATIONS.map((publication) => {
             return (
               <li key={publication.title} className="flex flex-col gap-2">
-                <h3 className="text-md sm:text-xl">{publication.title}</h3>
+                <Link
+                  href={
+                    publication.doi ||
+                    publication.pdf ||
+                    publication.website ||
+                    "#"
+                  }
+                  className="text-md sm:text-xl font-semibold hover:underline underline-offset-4"
+                >
+                  {publication.title}
+                </Link>
                 <h4 className="text-sm text-muted-foreground">
                   {publication.authors.join(", ")}
                 </h4>
@@ -32,6 +42,7 @@ export default function PublicationsPage() {
                         size: "sm",
                       })}
                       // icon={<AiFillFilePdf />}
+                      target="_blank"
                       href={publication.pdf}
                       // newTab
                     >
